@@ -1,14 +1,9 @@
 import {modal} from './modules/modal.js';
-import {auth} from './modules/auth.js';
-import {tagcloud} from './modules/tagcloud.js';
 import {loader} from './modules/loader.js';
-import {tree} from './modules/tree.js';
-import {transcription} from './modules/transcription.js';
 
-    let tc, 
-        hotRes, 
-        //accordion = document.getElementById('accordionJDC'),
-        //rectAccordion = accordion.getBoundingClientRect(),
+    let hotPubli, 
+        urlFicheItem = "/samszo/omk/s/fiches/item/",
+        urlAdminItem = "/samszo/omk/admin/item/",
         wait = new loader(),
         intervalId = window.setInterval(function(){
             changePapillon();
@@ -16,14 +11,90 @@ import {transcription} from './modules/transcription.js';
         }, 6000),
         confs;
 
-    d3.json("assets/data/confsInfos.js")
-    .then(data => {
+    changePapillon();
+    chargeCitations();
+    
+    //chargement des conférences    
+    d3.json("assets/data/confsInfos.js").then(data => {
         confs = data;
         aleaDia();
     });                
 
-    changePapillon();
-    chargeCitations();
+    //chargement des publications
+    //http://localhost/samszo/omk/api/items?property[0][property][]=2&property[0][type]=res&property[0][text]=61225&per_page=1000
+    d3.json("assets/data/itemsSamszoCreator.json").then(data=>{
+        console.log(data);
+        //formate les datas
+        let rs = [];
+        data.forEach(d=>{
+            let r = {
+                'lien':`<a target="blank" href="${urlAdminItem+d["o:id"]}">admin</a>, <a target="blank" href="${urlFicheItem+d["o:id"]}">détails</a>`,
+                'date':d["dcterms:date"] ? new Date(d["dcterms:date"][0]["@value"]).getUTCFullYear() : null,
+                'auteur':d["dcterms:creator"].map(c=>`<a target="blank" href="${urlFicheItem+c.value_resource_id}">${c.display_title}</a>`),
+                'titre':d["o:title"],
+                'type':d["dcterms:isPartOf"] ? d["dcterms:isPartOf"][0].display_title : '---',
+            };
+            rs.push(r);
+        })
+        rs.sort((a, b) => b.date - a.date);
+        setTable(rs);
+    });
+
+    const safeHtmlRenderer = (_instance, td, _row, _col, _prop, value) => {
+        // WARNING: Be sure you only allow certain HTML tags to avoid XSS threats.
+        // Sanitize the "value" before passing it to the innerHTML property.
+        td.innerHTML = value;
+      };
+    function setTable(data){
+        let headers = Object.keys(data[0]);
+
+        hotPubli = new Handsontable(d3.select('#hotPublications').node(), {
+            className: 'htDark',
+            afterGetColHeader: function(col, TH){
+                TH.className = 'darkTH'
+            },
+            colHeaders: true,
+            rowHeaders: true,
+            data:data,
+            colHeaders: headers,
+            height: '300px',
+            width: '100%',
+            licenseKey: 'non-commercial-and-evaluation',
+            customBorders: true,
+            dropdownMenu: true,
+            multiColumnSorting: true,
+            filters: true,
+            selectionMode:'single',
+            columns: getCellEditor(headers),
+            colWidths: [50, 50, 400, 600, 300],
+            stretchH: 'last',
+            manualColumnResize: true,
+            autoWrapRow: true,
+            autoWrapCol: true,
+            allowInsertColumn: false,
+            copyPaste: false,
+        });
+
+    }    
+
+    function getCellEditor(headers){
+        let editors = [];
+        headers.forEach(h=>{
+            switch (h) {
+                case 'date':
+                    editors.push({data:h, type:'date'})                  
+                    break;                
+                case 'auteur':
+                case 'lien':
+                    editors.push({ data:h, renderer: safeHtmlRenderer})                  
+                    break;                
+              default:
+                editors.push({data:h, type: 'text'})                  
+                break;
+            }
+          })
+        return editors;
+    }
 
     function aleaDia(){
         let conf = confs[d3.randomInt(0, confs.length-1)()],

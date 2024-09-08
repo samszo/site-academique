@@ -10,7 +10,9 @@
 
     <script src="https://kit.fontawesome.com/41992aa5bc.js" crossorigin="anonymous"></script>
     <script src="assets/js/d3.v7.min.js"></script>
+    <script src="assets/js/handsontable.full.min.js"></script>
 
+    <link href="assets/css/handsontable.full.min.css" rel="stylesheet">
     <link href="assets/css/bootstrap5.3.min.css" rel="stylesheet">
 
     <style>
@@ -137,7 +139,7 @@
                 <a class="nav-link active" aria-current="page" href="#Recherche"><i class="fa-light fa-landmark-magnifying-glass"></i> Recherches</a>
             </li>                                
             <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#Publications"><i class="fa-light fa-books"></i> Publications</a>
+                <a class="nav-link active" aria-current="page" href="#Productions"><i class="fa-light fa-books"></i> Productions</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="#CV"><i class="fa-light fa-person-burst"></i> CV</a>
@@ -155,7 +157,7 @@
 <main>
 
   <div class="container marketing">
-    <hr class="featurette-divider">
+    <hr class="featurette-divider" id="Accueil">
 
     <div class="row featurette" id="contentAccueil" >
       <div class="col-md-4">
@@ -178,22 +180,22 @@
 
               <dt class="col-sm-3"><i class="fa-light fa-people-group"></i></dt>
               <dd class="col-sm-9">
-                <a href="https://laboratoire-paragraphe.univ-paris8.fr/"><i class="fa-light fa-globe-pointer"></i></a>
+                <a target="_blank" href="https://laboratoire-paragraphe.univ-paris8.fr/"><i class="fa-light fa-globe-pointer"></i></a>
                 Laboratoire Paragraphe
               </dd>
             
               <dt class="col-sm-3"><i class="fa-light fa-building-columns"></i></dt>
               <dd class="col-sm-9">
                   <p class="lh-1">
-                    <a href="https://humanites-numeriques.univ-paris8.fr/"><i class="fa-light fa-globe-pointer"></i></a>
+                    <a target="_blank" href="https://humanites-numeriques.univ-paris8.fr/"><i class="fa-light fa-globe-pointer"></i></a>
                     Département Humanités Numériques
                   </p>
                   <p class="lh-1">
-                    <a href="https://www.univ-paris8.fr/UFR-des-sciences-et-des-technologies-du-numerique-STN"><i class="fa-light fa-globe-pointer"></i></a>
+                    <a target="_blank" href="https://www.univ-paris8.fr/UFR-des-sciences-et-des-technologies-du-numerique-STN"><i class="fa-light fa-globe-pointer"></i></a>
                     UFR Sciences et Technologies du Numériques
                   </p>
                   <p class="lh-1">
-                    <a href="https://www.univ-paris8.fr/"><i class="fa-light fa-globe-pointer"></i></a>
+                    <a target="_blank" href="https://www.univ-paris8.fr/"><i class="fa-light fa-globe-pointer"></i></a>
                     Université Paris 8 
                   </p>
               </dd>
@@ -222,53 +224,121 @@
 
     <hr class="featurette-divider" id="Enseignement">
 
-    <!-- Three columns of text below the carousel -->
-    <div class="row" id="contentEnseignement">
-      <div class="col-lg-4">
-        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg>
-        <h2 class="fw-normal">Heading</h2>
-        <p>Some representative placeholder content for the three columns of text below the carousel. This is the first column.</p>
-        <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
-      </div><!-- /.col-lg-4 -->
-      <div class="col-lg-4">
-        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg>
-        <h2 class="fw-normal">Heading</h2>
-        <p>Another exciting bit of representative placeholder content. This time, we've moved on to the second column.</p>
-        <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
-      </div><!-- /.col-lg-4 -->
-      <div class="col-lg-4">
-        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg>
-        <h2 class="fw-normal">Heading</h2>
-        <p>And lastly this, the third column of representative placeholder content.</p>
-        <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
-      </div><!-- /.col-lg-4 -->
-    </div><!-- /.row -->
-
-
-    <!-- START THE FEATURETTES -->
+    <div class="row featurette" id="contentEnseignement">
+      <h2>Enseignements</h2>
+      <p>
+Je donne principalement des cours au Département Humanités Numériques (anciennement Hypermedias) de l’Université Paris 8.                    
+<a target="_blank" href="https://humanites-numeriques.univ-paris8.fr/"><i class="fa-light fa-globe-pointer"></i></a> 
+</p>
+<p>
+  Les enseignements que je donne se développent suivant trois axes complémentaires : technique, conceptuel, collaboratif.
+</p>
+      <h3>Axe technique</h3>
+    <p>
+    Les étudiants sont formés aux langages informatiques et aux outils nécessaires pour le développement de dispositifs numériques et la maîtrise des flux d’information et de communication dans un environnement Web. C’est l’occasion suivant une pédagogie par projet, de montrer par des exemples concrets de conception et de développement, comment utiliser les outils gratuits et Open Source pour mettre en pratiques les langages informatiques.
+    </p>
+    <h3>Axe théorique</h3>
+    <p>Cette approche consiste à montrer aux étudiants comment analyser et critiquer une thématique en utilisant les notions et les théories des sciences de l’information et de la communication et plus généralement des sciences humaines à travers des outils et des méthodes de veille informationnelle. L’objectif est d’encourager les étudiants à faire de la « musculation cérébrale» et a constituer leur propre base de connaissances afin d’augmenter leurs pouvoirs de discernement et d’action.      
+    </p> 
+  <h3>Axe collaboratif</h3>
+  <p>   
+  Le troisième axe consiste à mettre les étudiants en situation de travail collectif afin qu’ils expérimentent les difficultés et les avantages de l’intelligence collective. Dans cet axe, nous accompagnons les étudiants dans la conception et la réalisation d’un projet numérique incluant par exemple : une note d’intention, un teaser vidéo, un site Web, une application mobile et un dossier de conception. Les étudiants doivent rédiger un cahier des charges pour un projet hypermédia/TIC, savoir communiquer et collaborer avec les équipes de création et de développement, participer à la réalisation de projets innovants, mettre en œuvre ou appliquer une méthode de développement adaptée à un travail d’équipe, savoir réaliser une maquette fonctionnelle, argumenter et défendre un point de vue en réunion d’équipe, devant des clients, décideurs, etc.        
+</p>    
+    </div>
+    <p>
+      Pour plus de détails <a target="_blank" href="http://localhost/samszo/HDR/docs/cv/cv.html#activit%C3%A9s-denseignement-1"><i class="fa-light fa-globe-pointer"></i></a>
+    </p>     
 
     <hr class="featurette-divider"  id="Recherche">
 
 
     <div class="row featurette" id="contentRecherche">
-      <div class="col-md-7 order-md-2">
-        <h2 class="featurette-heading fw-normal lh-1">Oh yeah, it’s that good. <span class="text-body-secondary">See for yourself.</span></h2>
-        <p class="lead">Another featurette? Of course. More placeholder content here to give you an idea of how this layout would work with some actual real-world content in place.</p>
-      </div>
-      <div class="col-md-5 order-md-1">
-        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-bg)"/><text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em">500x500</text></svg>
-      </div>
+
+      <h2>Recherches</h2>
+
+        <p>Je travaille au laboratoire Paragraphe (EA 349) à l'Université Paris 8 principalement dans l’axe <strong>Dispositifs numériques : production, usages et modélisation communicationnelle</strong>
+          (DiNuPUMoC) <a target="_blank" href="https://laboratoire-paragraphe.univ-paris8.fr/Dispositifs-numeriques-production-usages-et-modelisation-communicationnelle"><i class="fa-light fa-globe-pointer"></i></a>
+          sous la direction d’Imad Saleh <a target="_blank" href="https://scholar.google.fr/citations?user=5mgWgJoAAAAJ&hl=fr"><i class="fa-light fa-globe-pointer"></i></a></p>
+        <p>J'entretiens de nombreuses collaborations avec les autres axes de ce laboratoire notamment :</p>
+        <ul>
+          <li>Innovation numérique et Intelligence Artificielle (CiTU) <a target="_blank" href="https://laboratoire-paragraphe.univ-paris8.fr/Design-de-l-information-post-numerique-et-innovation"><i class="fa-light fa-globe-pointer"></i></a></li>
+          <li>Médiations, Pratiques Informationnelles, Patrimoine (MPIP) <a target="_blank" href="https://laboratoire-paragraphe.univ-paris8.fr/Mediations-Pratiques-informationnelles-Patrimoine"><i class="fa-light fa-globe-pointer"></i></a></li>
+          <li>Apprentissage, développement, cognition (ADC) <a target="_blank" href="https://laboratoire-paragraphe.univ-paris8.fr/ADC-ApprentissageDeveloppementCognition"><i class="fa-light fa-globe-pointer"></i></a></li>
+        </ul>
+        <p>Ces collaborations prennent la forme de publications communes <span class="citation" data-cites="szoniecky2016 szoniecky2017 desfrichesdoria2022 ihadjadène2013 laborderie2015 meunier2017 meunier2018">(<a target="_blank" href="#ref-szoniecky2016" role="doc-biblioref" aria-expanded="false"><strong>szoniecky2016?</strong></a>; <a target="_blank" href="#ref-szoniecky2017" role="doc-biblioref" aria-expanded="false"><strong>szoniecky2017?</strong></a>; <a target="_blank" href="#ref-desfrichesdoria2022" role="doc-biblioref" aria-expanded="false"><strong>desfrichesdoria2022?</strong></a>; <a target="_blank" href="#ref-ihadjadène2013" role="doc-biblioref" aria-expanded="false"><strong>ihadjadène2013?</strong></a>; <a target="_blank" href="#ref-laborderie2015" role="doc-biblioref" aria-expanded="false"><strong>laborderie2015?</strong></a>; <a target="_blank" href="#ref-meunier2017" role="doc-biblioref" aria-expanded="false"><strong>meunier2017?</strong></a>; <a target="_blank" href="#ref-meunier2018" role="doc-biblioref" aria-expanded="false"><strong>meunier2018?</strong></a>)</span>, de projets de recherche menés en collaboration (<strong>?@sec-projetPolemika</strong>, <strong>?@sec-porjetPedagotheque</strong>) ou d’organisation d’évènement scientifiques (<strong>?@sec-seminaireAdacemu</strong>, O1 Design, H2ptm…).</p>
+        <p>L’atmosphère très fertile au sein de Paragraphe et les relations intenses que ce laboratoire entretient avec la communauté des sciences de l’information et de la communication, a stimulé l’engagement de mes recherches dans de multiples collaborations en France et à l’étranger.</p>
+        <p>Celles-ci m’ont permis de découvrir des milieux et des pratiques très diverses, par exemple&nbsp;: 
+          <ul>
+            <li>avec des institutions prestigieuses comme :
+              <ul>
+                <li>la Bibliothèque Nationale de France <a target="_blank" href="https://www.bnf.fr/fr"><i class="fa-light fa-globe-pointer"></i></a></li>
+                <li>les Archives Nationales <a target="_blank" href="https://www.archives-nationales.culture.gouv.fr/"><i class="fa-light fa-globe-pointer"></i></a></li>
+                <li>l'Institut national de l'audiovisuel <a target="_blank" href="https://www.ina.fr/"><i class="fa-light fa-globe-pointer"></i></a></li>
+              </ul>
+            </li>
+            <li>avec des programmes de recherche ANR comme :
+              <ul>
+                <li>Biolographes <a target="_blank" href="https://biolog.hypotheses.org/"><i class="fa-light fa-globe-pointer"></i></a></li>
+                <li>Aliento <a target="_blank" href="https://www.aliento.eu/fr/actualites/"><i class="fa-light fa-globe-pointer"></i></a></li>
+              </ul>
+            </li>
+            <li>avec des projets de recherches internationaux comme :
+              <ul>
+                <li>Arcanes <a target="_blank" href="https://crilcq.arcanes.ca/"><i class="fa-light fa-globe-pointer"></i></a></li>
+                <li>CoCult <a target="_blank" href="https://erua-eui.eu/wp-content/uploads/2023/06/ReERUA_COCULT_PROGRAM_LESVOS_12-13_07_2023.pdf"><i class="fa-light fa-globe-pointer"></i></a></li>
+              </ul>
+            </li>
+            <li>avec des groupes de recherches comme :
+              <ul>
+                <li>Digital Tools & Uses <a target="_blank" href="http://digitaluses.info/"><i class="fa-light fa-globe-pointer"></i></a></li>
+                <li>GENIC <a target="_blank" href="https://genic.hypotheses.org/"><i class="fa-light fa-globe-pointer"></i></a></li>
+              </ul>
+            </li>
+            <li>avec des enjeux sociétaux importants comme :
+              <ul>
+                <li>l’accessibilité</li>
+                <li>l’écologie</li>
+                <li>l’éthique</li>
+              </ul>
+            </li>
+          </ul>
+        <p>La participation dès l’origine à trois Projets d’Investissement d’Avenir (PIA) La chance de découvrir des projets importants tout à la fois en terme de gouvernance de la recherche que de possibilité d’expérimentation :</p>
+        <ul>
+          <li>l’EUR ArTec <a target="_blank" href="https://eur-artec.fr/"><i class="fa-light fa-globe-pointer"></i></a></li>
+          <li>le laboratoire d’excellence ArtsH2H <a target="_blank" href="https://actions-recherche.bnf.fr/bnf/anirw3.nsf/IX01/E2013000164_labex-arts-h2h"><i class="fa-light fa-globe-pointer"></i></a></li>
+          <li>l’IDEFI CréaTIC <a target="_blank" href="https://idefi-creatic.net/"><i class="fa-light fa-globe-pointer"></i></a></li>
+        </ul>
+        <p>Mes domaines de recherche interrogent tant du point de vue des technologies qu’elles utilisent <span class="citation" data-cites="legoux2023">(<a target="_blank" href="#ref-legoux2023" role="doc-biblioref" aria-expanded="false"><strong>legoux2023?</strong></a>)</span> que des discours qui portent sur elles <span class="citation" data-cites="bachimont2017 citton2023 ertzscheid2023 masure2023 mineur2022 saleh2018">(<a target="_blank" href="#ref-bachimont2017" role="doc-biblioref" aria-expanded="false"><strong>bachimont2017?</strong></a>; <a target="_blank" href="#ref-citton2023" role="doc-biblioref" aria-expanded="false"><strong>citton2023?</strong></a>; <a target="_blank" href="#ref-ertzscheid2023" role="doc-biblioref" aria-expanded="false"><strong>ertzscheid2023?</strong></a>; <a target="_blank" href="#ref-masure2023" role="doc-biblioref" aria-expanded="false"><strong>masure2023?</strong></a>; <a target="_blank" href="#ref-mineur2022" role="doc-biblioref" aria-expanded="false"><strong>mineur2022?</strong></a>; <a target="_blank" href="#ref-saleh2018" role="doc-biblioref" aria-expanded="false"><strong>saleh2018?</strong></a>)</span>
+          , les concepts suivants :</p>
+          <ul>
+            <li>la complexité des dispositifs numériques</li>
+            <li>IAs génératives</li>
+            <li>Internet des Objects</li>
+            <li>outils d’éditorialisation</li>
+            <li>modélisation et de cartographie</li>
+          </ul>
+        <p>Face à ces écosystèmes de connaissances <span class="citation" data-cites="szoniecky2014">(<a target="_blank" href="#ref-szoniecky2014" role="doc-biblioref" aria-expanded="false"><strong>szoniecky2014?</strong></a>)</span> qu’il est difficile de discerner, de raisonner et d’agir, nous proposons une méthode d’analyse de ces phénomènes qui donnent aux chercheurs les moyens de construire des points de vue spécifiques, de les partager avec d’autres et de voir leurs évolutions.</p>
+        <p>Cette méthode s’appuie sur une modélisation onto-éthique des existences informationnelles qui peuplent ces environnements <span class="citation" data-cites="szoniecky2023 szoniecky2020 szoniecky2016">(<a target="_blank" href="#ref-szoniecky2023" role="doc-biblioref" aria-expanded="false"><strong>szoniecky2023?</strong></a>; <a target="_blank" href="#ref-szoniecky2020" role="doc-biblioref" aria-expanded="false"><strong>szoniecky2020?</strong></a>; <a target="_blank" href="#ref-szoniecky2016" role="doc-biblioref" aria-expanded="false"><strong>szoniecky2016?</strong></a>)</span>.</p>
+        <p>Nous nous basons sur cinq principes théoriques :</p>
+        <ul>
+          <li><p>les connaissances se produisent suivant un cycle continu de sémioses <span class="citation" data-cites="µ2015">(<a target="_blank" href="#ref-µ2015" role="doc-biblioref" aria-expanded="false"><strong>µ2015?</strong></a>)</span> dans le monde physique et dans le monde de la pensée <span class="citation" data-cites="descola2005">(<a target="_blank" href="#ref-descola2005" role="doc-biblioref" aria-expanded="false"><strong>descola2005?</strong></a>)</span>,</p></li>
+          <li><p>l’analogie <span class="citation" data-cites="hofstadter2013">(<a target="_blank" href="#ref-hofstadter2013" role="doc-biblioref" aria-expanded="false"><strong>hofstadter2013?</strong></a>)</span> relie le discernement et l’action en gardant le souvenir de cette relation qui devient à force de répétition : une manière d’être <span class="citation" data-cites="latour2012">(<a target="_blank" href="#ref-latour2012" role="doc-biblioref" aria-expanded="false"><strong>latour2012?</strong></a>)</span>,</p></li>
+          <li><p>les souvenirs prennent la forme d’un « pli » <span class="citation" data-cites="deleuze1988">(<a target="_blank" href="#ref-deleuze1988" role="doc-biblioref" aria-expanded="false"><strong>deleuze1988?</strong></a>)</span> à la manière de deux miroirs qui plient la lumière en se reflétant l’un dans l’autre à l’infini</p></li>
+          <li><p>entre discerner et agir, intuition et expression, une « pulsation existentielle » génère une « raison trajective » <span class="citation" data-cites="berque2009">(<a target="_blank" href="#ref-berque2009" role="doc-biblioref" aria-expanded="false"><strong>berque2009?</strong></a>)</span></p></li>
+          <li><p>les pliages et leurs capacités à se faire, se défaire, se bloquer dépendent du degré de flexibilité cognitive <span class="citation" data-cites="clément2021">(<a target="_blank" href="#ref-clément2021" role="doc-biblioref" aria-expanded="false"><strong>clément2021?</strong></a>)</span>.</p></li>
+        </ul>
+        <p>Nous pratiquons cette méthode à partir d’outils <strong>?@sec-outils</strong> que nous concevons et développons pour réaliser des cartographies de connaissances.</p>
+        <p>Pour plus de détails <a target="_blank" href="http://localhost/samszo/HDR/docs/cv/cv.html#activit%C3%A9s-de-recherche"><i class="fa-light fa-globe-pointer"></i></a>   </p>     
+
     </div>
 
-    <hr class="featurette-divider"  id="Publications">
+    <hr class="featurette-divider"  id="Productions">
 
-    <div class="row featurette"  id="contentPublications">
-      <div class="col-md-7">
-        <h2 class="featurette-heading fw-normal lh-1">And lastly, this one. <span class="text-body-secondary">Checkmate.</span></h2>
-        <p class="lead">And yes, this is the last block of representative placeholder content. Again, not really intended to be actually read, simply here to give you a better view of what this would look like with some actual content. Your content.</p>
-      </div>
-      <div class="col-md-5">
-        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-bg)"/><text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em">500x500</text></svg>
+    <div class="row featurette"  id="contentProductions">
+      <div class="col-md-12">
+        <h2>Productions</h2>
+        <h3>Liste</h3>
+        <div id="hotProductions"></div>
       </div>
     </div>
 
@@ -303,7 +373,7 @@
 
   <!-- FOOTER -->
   <footer class="container">
-    <p class="float-end"><a href="#"><i class="fa-light fa-circle-up" style="color:white"></i></a></p>
+    <p class="float-end"><a target="_blank" href="#"><i class="fa-light fa-circle-up" style="color:white"></i></a></p>
     <p>2024 Design by Samuel Szoniecky 
         <a target="_blank" href="https://laboratoire-paragraphe.univ-paris8.fr/"><img data-bs-theme="dark" style="height: 40px;" src="assets/img/logo-paragraphe-blanc.svg"
                 alt="Laboratoire Paragraphe" /></a>

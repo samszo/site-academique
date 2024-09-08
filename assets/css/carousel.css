@@ -43,7 +43,7 @@ body {
 ------------------------- */
 
 .featurette-divider {
-  margin: 3rem 0; /* Space out the Bootstrap <hr> more */
+  margin: 6rem 0; /* Space out the Bootstrap <hr> more */
 }
 
 /* Thin out the marketing headings */
